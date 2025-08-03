@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Why Not CapCut?</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fffdfa;
+      color: #222;
+      height: 100%;
+    }
 
+    /* Container for header & content; we blur/unblur this */
+    #content {
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+      transition: filter 0.3s ease;
+    }
+
+    h1, h2 {
+      color: #111;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 2em;
+      margin-top: 2em;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    ul {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-left: 1.2em;
+    }
+    li {
+      margin-bottom: 0.5em;
+    }
+    .site-header {
+      background-color: #000;
+      color: #fff;
+      padding: 1em 2em;
+      text-align: center;
+    }
+
+    /* Popup modal + backdrop */
+    #backdrop {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 9998;
+    }
+    #popup {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fffdfa;
+      border: 2px solid #222;
+      border-radius: 12px;
+      padding: 2em;
+      width: 90%;
+      max-width: 500px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      z-index: 9999;
+      animation: bounceIn 0.8s ease;
+    }
+    #popup h2 {
+      font-size: 2em;
+      color: #111;
+      margin: 0;
+    }
+    #popup p {
+      margin-top: 1em;
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+    #popup button {
+      margin-top: 1.5em;
+      font-size: 1em;
+      padding: 0.6em 1.2em;
+      background-color: #222;
+      color: #fffdfa;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .blurred {
+      filter: blur(5px);
+    }
+
+    @keyframes bounceIn {
+      0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+      60%  { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Blur the content behind the popup
+      document.getElementById('content').classList.add('blurred');
+    });
+
+    function closePopup() {
+      document.getElementById('popup').remove();
+      document.getElementById('backdrop').remove();
+      document.getElementById('content').classList.remove('blurred');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Backdrop -->
+  <div id="backdrop"></div>
+
+  <!-- Animated Popup -->
+  <div id="popup">
+    <h2>🔍 Just a Heads-Up!</h2>
+    <p>
+      This page shares a fun and opinionated take on video editing apps. It uses silly comparisons, cartoonish metaphors, and casual language to explain things—like saying a feature is locked “behind a candy store with no coins.”<br><br>
+      There's no bad language, scary stuff, or harmful content here. If anything sounds dramatic, it’s just for fun! Think of it like comic book storytelling with real-life frustrations.
+    </p>
+    <button onclick="closePopup()">Got it—Show Me the Site!</button>
+  </div>
+
+  <!-- Main site content -->
+  <div id="content">
+    <header class="site-header">
+      <h1 style="color: white;">CapCut?</h1>
+      <h3>Nah, we scrapped it</h3>
+    </header>
+
+    <p>
+      CapCut looks amazing... until you try doing anything cool. Then—BAM! here comes the flipping “Get Pro” ad. They tempt you with glitter, then block your creativity like a pop-up monster.
+    </p>
+
+    <h2>1. “Get Pro” or Get Blocked</h2>
+    <p>
+      Want a fire effect? “Pro Only.” Export without a watermark? Pay up dude. Even browsing feels like sliding past a candy store with no coins.
+    </p>
+    <ul>
+      <li>Basic text animations? Locked.</li>
+      <li>Cool transitions? Still locked.</li>
+      <li>Advanced exporting? Yup... locked behind “Pro” dude.</li>
+    </ul>
+
+    <h2>2. The Freemium Trap</h2>
+    <p>
+      They advertise it like free candy, but once you're inside, all the best sweets are behind a paywall. Like getting gum that comes with an invoice.
+    </p>
+
+    <h2>3. Terms that make you go “What the actual what?”</h2>
+    <p>
+      By uploading your video, CapCut can remix and share it—even make money from it—and you get zero rewards. It’s like sharing a fun hamster video, then seeing it go viral without credit!
+    </p>
+
+    <h2>4. This editor's actually good (Which makes it worse)</h2>
+    <p>
+      Let's be honest—it works super well. Easy timeline, crisp effects, cool features. That’s what makes the paywall trap feel like a carnival trick: awesome ride, but admission’s locked.
+    </p>
+
+    <h2>Final Verdict</h2>
+    <h3>Try OpenCut Instead</h3>
+    <p>
+      CapCut's really cool if I'm honest, but the pricing is a big bummer. If you’re tired of watermark drama, constant upgrade pop-ups, and terms that feel like a tangled rulebook—switch lanes.
+    </p>
+
+    <p><strong>OpenCut</strong> is the video editor for creators who just want to create:</p>
+    <ul>
+      <li>💸 Totally free—no surprises</li>
+      <li>🚫 No watermarks, ever</li>
+      <li>🕵️‍♂️ No tracking or hidden data stuff</li>
+      <li>🖥 Works on Windows, macOS, and Linux</li>
+      <li>🛠 Built by creators, for creators</li>
+    </ul>
+
+    <p>
+      Say goodbye to glittery trick ads. <a href="https://opencut.app/">OpenCut</a> lets you edit without feeling tricked.
+    </p>
+  </div>
+</body>
+</html>
